@@ -1,0 +1,96 @@
+{% extends "index.twig" %}
+
+{% block content %}
+    {% if response %}
+        <p>test user created</p>
+        <dl class="test-user">
+            <dt>ID</dt>
+            <dd>{{ response.id }}</dd>
+            <dt>access_token<dt>
+            <dd>{{ response.access_token }}</dd>
+            <dt>login_url<dt>
+            <dd><a href="{{ response.login_url }}" target="_blank">{{ response.login_url }}</a></dd>
+            <dt>email<dt>
+            <dd>{{ response.email }}</dd>
+            <dt>password</dt>
+            <dd>{{ response.password }}</dd>
+        </dl>
+    {% endif %}
+
+    <div class="form section">
+        <form action="" method="post">
+            <dl>
+                <dt>installed<dt>
+                <dd>
+                    <label><input type="radio" name="installed" value="false" selected> false</label>
+                    <label><input type="radio" name="installed" value="true"> true</label>
+                </dd>
+                <dt>permissions</dt>
+                <dd>
+                    <label><input type="checkbox" name="permissions[]" value="user_about_me"> user_about_me</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_activities"> user_activities</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_birthday"> user_birthday</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_checkins"> user_checkins</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_education_history"> user_education_history</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_events"> user_events</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_groups"> user_groups</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_hometown"> user_hometown</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_interests"> user_interests</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_likes"> user_likes</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_location"> user_location</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_notes"> user_notes</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_online_presence"> user_online_presence</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_photo_video_tags"> user_photo_video_tags</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_photos"> user_photos</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_relationships"> user_relationships</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_relationship_details"> user_relationship_details</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_religion_politics"> user_religion_politics</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_status"> user_status</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_videos"> user_videos</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_website"> user_website</label>
+                    <label><input type="checkbox" name="permissions[]" value="user_work_history"> user_work_history</label>
+                    <label><input type="checkbox" name="permissions[]" value="email"> email</label>
+                    <label><input type="checkbox" name="permissions[]" value="read_friendlists"> read_friendlists</label>
+                    <label><input type="checkbox" name="permissions[]" value="read_insights"> read_insights</label>
+                    <label><input type="checkbox" name="permissions[]" value="read_mailbox"> read_mailbox</label>
+                    <label><input type="checkbox" name="permissions[]" value="read_requests"> read_requests</label>
+                    <label><input type="checkbox" name="permissions[]" value="read_stream"> read_stream</label>
+                    <label><input type="checkbox" name="permissions[]" value="xmpp_login"> xmpp_login</label>
+                    <label><input type="checkbox" name="permissions[]" value="ads_management"> ads_management</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_about_me"> friends_about_me</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_activities"> friends_activities</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_birthday"> friends_birthday</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_checkins"> friends_checkins</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_education_history"> friends_education_history</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_events"> friends_events</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_groups"> friends_groups</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_hometown"> friends_hometown</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_interests"> friends_interests</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_likes"> friends_likes</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_location"> friends_location</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_notes"> friends_notes</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_online_presence"> friends_online_presence</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_photo_video_tags"> friends_photo_video_tags</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_photos"> friends_photos</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_relationships"> friends_relationships</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_relationship_details"> friends_relationship_details</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_religion_politics"> friends_religion_politics</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_status"> friends_status</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_videos"> friends_videos</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_website"> friends_website</label>
+                    <label><input type="checkbox" name="permissions[]" value="friends_work_history"> friends_work_history</label>
+                    <label><input type="checkbox" name="permissions[]" value="publish_stream"> publish_stream</label>
+                    <label><input type="checkbox" name="permissions[]" value="create_event"> create_event</label>
+                    <label><input type="checkbox" name="permissions[]" value="rsvp_event"> rsvp_event</label>
+                    <label><input type="checkbox" name="permissions[]" value="sms"> sms</label>
+                    <label><input type="checkbox" name="permissions[]" value="offline_access"> offline_access</label>
+                    <label><input type="checkbox" name="permissions[]" value="publish_checkins"> publish_checkins</label>
+                    <label><input type="checkbox" name="permissions[]" value="manage_friendlists"> manage_friendlists</label>
+                    <label><input type="checkbox" name="permissions[]" value="manage_pages"> manage_pages</label>
+                </dd>
+            </dl>
+            <p><input type="submit" /></p>
+        </form>
+    </div>
+{% endblock %}
+

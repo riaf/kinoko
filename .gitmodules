@@ -1,0 +1,6 @@
+[submodule "vendor/twig"]
+	path = vendor/twig
+	url = git://github.com/fabpot/Twig.git
+[submodule "vendor/facebook"]
+	path = vendor/facebook
+	url = git@github.com:tobiassjosten/facebook-extension.git

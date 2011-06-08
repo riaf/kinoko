@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>kinoko :: fbtools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .global.header, .global.content, .global.footer {
+            width: 974px;
+            margin: 1em auto;
+        }
+        .global.header {
+            border-bottom: 3px double #999;
+        }
+        .global.footer {
+            border-top: 3px double #999;
+            text-align: right;
+        }
+        .nav ul li {
+            display: inline-block;
+        }
+        div.test-user {
+            border-bottom: 1px dotted #dbdbdb;
+        }
+        dl dt {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header global clearfix">
+        <h1>kinoko</h1>
+        <p>Facebook Application's Test User Management System</p>
+
+        <div class="nav clearfix">
+            <ul>
+                <li><a href="{{ app.url_generator.generate('homepage') }}">Home</a></li>
+                <li><a href="{{ app.url_generator.generate('app_new') }}">New App</a></li>
+                <li><a target="_blank" href="http://www.facebook.com/developers">Developer Application (on Facebook)</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content global clearfix">
+        {% block content %}
+
+            {% if application %}
+                <h1>{{ application.name }}</h1>
+                <p><a href="{{ application.link }}">Application Page</a></p>
+
+                <h2>Test User List</h2>
+                {% if test_user_list %}
+                    {% for user in test_user_list %}
+                        <div class="test-user">
+                            <dl>
+                                <dt>ID</dt>
+                                <dd>{{ user.id }}</dd>
+                                <dt>access_token<dt>
+                                <dd>{{ user.access_token }}</dd>
+                                <dt>login_url</dt>
+                                <dd><a target="_blank" href="{{ user.login_url }}">{{ user.login_url }}</a></dd>
+                            </dl>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>{{ application.name }} have no test user</p>
+                {% endif %}
+            {% endif %}
+
+        {% endblock %}
+    </div>
+
+    <div class="footer global clearfix">
+        <p>Powered by <a href="http://riaf.jp">riaf.jp</a></p>
+    </div>
+
+</body>
+</html>
